@@ -1,12 +1,12 @@
-# centos-7-vagrant-supervisor-ssh Docker image sources
+# centos-6-vagrant-supervisor-ssh
 
-CentOS 7 vagrant friendly container with supervisord and sshd installed.
+CentOS 6 vagrant friendly container with supervisord and sshd installed.
 
 ## Installation
 
 You may fetch the pre-built image from Docker Hub:
 
-`$ docker pull ezamriy/centos-7-vagrant-supervisor-ssh`
+`$ docker pull ezamriy/centos-6-vagrant-supervisor-ssh`
 
 Minimal Vagrantfile example:
 
@@ -16,11 +16,10 @@ Minimal Vagrantfile example:
 
 Vagrant.configure(2) do |config|
   config.vm.provider "docker" do |docker|
-      docker.image = "ezamriy/centos-7-vagrant-supervisor-ssh"
+      docker.image = "ezamriy/centos-6-vagrant-supervisor-ssh"
       docker.has_ssh = true
   end
 end
 ```
 
-Please check [Vagrant documentation](https://www.vagrantup.com/docs/docker/) to
-get more information.
+Please check [Vagrant documentation](https://www.vagrantup.com/docs/docker/) to get more information.

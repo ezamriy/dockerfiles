@@ -1,12 +1,12 @@
-FROM centos:centos7
+FROM centos:centos6
 
 MAINTAINER Eugene Zamriy <eugene@zamriy.info>
 
 ENV LANG en_US.UTF-8
 
-RUN yum -y install http://download.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm && \
+RUN yum -y install https://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm && \
     yum -y update && \
-    yum -y install openssh-clients openssh-server sudo supervisor && \
+    yum -y install openssh-clients openssh-server passwd sudo supervisor && \
     yum clean all && \
     sed -i -e '/\[epel\]/,/^\[/s/enabled=1/enabled=0/' /etc/yum.repos.d/epel.repo && \
     ssh-keygen -b 1024 -t rsa -f /etc/ssh/ssh_host_key && \
