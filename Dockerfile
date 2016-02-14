@@ -1,16 +1,16 @@
-FROM centos:centos6
+FROM centos:centos5
 
 MAINTAINER Eugene Zamriy <eugene@zamriy.info>
 
 ENV LANG en_US.UTF-8
 
-RUN yum -y install https://dl.fedoraproject.org/pub/epel/5/x86_64/epel-release-5-4.noarch.rpm && \
-    yum -y install http://sigmarepo.zamriy.info/repo/EL/5/x86_64/sigma-release-5-1.el5.sigma.noarch.rpm && \
+RUN rpm -ivh --nosignature http://ftp.colocall.net/pub/epel/5/x86_64/epel-release-5-4.noarch.rpm && \
+    rpm -ivh --nosignature http://sigmarepo.zamriy.info/repo/EL/5/x86_64/sigma-release-5-1.el5.sigma.noarch.rpm && \
     yum -y update && \
-    yum -y install openssh-clients openssh-server passwd sudo supervisor && \
+    yum -y install curl.x86_64 openssh-clients openssh-server sudo supervisor && \
     yum clean all && \
     sed -i -e '/\[epel\]/,/^\[/s/enabled=1/enabled=0/' /etc/yum.repos.d/epel.repo && \
-    sed -i -e '/\[sigma\]/,/^\[/s/enabled=1/enabled=0/' /etc/yum.repos.d/epel.repo && \
+    sed -i -e '/\[sigma\]/,/^\[/s/enabled=1/enabled=0/' /etc/yum.repos.d/sigma.repo && \
     ssh-keygen -b 1024 -t rsa -f /etc/ssh/ssh_host_key && \
     ssh-keygen -b 1024 -t rsa -f /etc/ssh/ssh_host_rsa_key && \
     ssh-keygen -b 1024 -t dsa -f /etc/ssh/ssh_host_dsa_key && \
