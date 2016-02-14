@@ -7,7 +7,7 @@ ENV LANG en_US.UTF-8
 RUN rpm -ivh --nosignature http://ftp.colocall.net/pub/epel/5/x86_64/epel-release-5-4.noarch.rpm && \
     rpm -ivh --nosignature http://sigmarepo.zamriy.info/repo/EL/5/x86_64/sigma-release-5-1.el5.sigma.noarch.rpm && \
     yum -y update && \
-    yum -y install curl.x86_64 openssh-clients openssh-server sudo supervisor && \
+    yum -y install curl.x86_64 openssh-clients openssh-server python-simplejson sudo supervisor && \
     yum clean all && \
     sed -i -e '/\[epel\]/,/^\[/s/enabled=1/enabled=0/' /etc/yum.repos.d/epel.repo && \
     sed -i -e '/\[sigma\]/,/^\[/s/enabled=1/enabled=0/' /etc/yum.repos.d/sigma.repo && \
