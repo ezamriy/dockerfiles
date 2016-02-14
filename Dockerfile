@@ -4,7 +4,7 @@ MAINTAINER Eugene Zamriy <eugene@zamriy.info>
 
 ENV LANG en_US.UTF-8
 
-RUN yum -y install https://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm && \
+RUN yum -y install https://dl.fedoraproject.org/pub/epel/5/x86_64/epel-release-5-4.noarch.rpm && \
     yum -y install http://sigmarepo.zamriy.info/repo/EL/5/x86_64/sigma-release-5-1.el5.sigma.noarch.rpm && \
     yum -y update && \
     yum -y install openssh-clients openssh-server passwd sudo supervisor && \
