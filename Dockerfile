@@ -26,6 +26,6 @@ RUN yum -y install http://download.fedoraproject.org/pub/epel/7/x86_64/e/epel-re
 
 COPY supervisord.conf /etc/supervisord.conf
 
-EXPOSE 22 80
+EXPOSE 22 80 443
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
