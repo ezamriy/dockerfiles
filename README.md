@@ -1,2 +1,3 @@
-# dockerfiles
-My Docker images sources (each image is located in the separate branch).
+# centos-6-revisor-cloudlinux
+
+CentOS 6 Docker image for CloudLinux ISO images building with [revisor](https://fedorahosted.org/revisor/).
