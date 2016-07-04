@@ -4,7 +4,7 @@ MAINTAINER Eugene Zamriy <eugene@zamriy.info>
 
 ENV LANG en_US.UTF-8
 
-RUN yum -y install http://download.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm && \
+RUN yum -y install http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && \
     yum -y update && \
     yum -y install openssh-clients openssh-server sudo supervisor && \
     yum clean all && \
