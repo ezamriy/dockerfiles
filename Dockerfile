@@ -2,7 +2,7 @@ FROM centos:centos7
 
 MAINTAINER Eugene Zamriy <eugene@zamriy.info>
 
-ADD ./mongodb-org-3.2.repo /etc/yum.repos.d/
+ADD ./mongodb-org-3.4.repo /etc/yum.repos.d/
 
 RUN yum -y update && \
     yum -y install mongodb-org-server mongodb-org-shell mongodb-org-tools && \
